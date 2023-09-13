@@ -1,2 +1,3 @@
 # Autentication_API
-this API we'll user for autentication the login. This apilication we'll use NodeJs, Express and MongoDB for gerent autentications using jwt
+
+We will use this API to authenticate web applications that use the login method to access it. In this application we will use NodeJs, Express and MongoDB to generate authentication using jw
