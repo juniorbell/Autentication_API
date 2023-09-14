@@ -47,7 +47,7 @@ const User = require ('./models/User')
         const user = new User ({
             name,
             email,
-            password,
+            password: passwordHash,
         })
         try{
             await user.save()
@@ -58,7 +58,19 @@ const User = require ('./models/User')
             res.status(500).json({msg: 'Algo aconteceu de errado, tente novamente mais tarde!'})
         }
     })
+//autentication
 
+
+app.post("/auth/login", async (req, res)=>{
+    const {email, password} = req.body
+    if(!email) {
+        return res.status(422).json({msg: 'O e-mail é obrigatório'})
+    }
+    if(!password) {
+        return res.status(422).json({msg: 'A senha é obrigatória'})
+    }
+
+})
 
 //Credenciais
 const dbUser= process.env.DB_USER
